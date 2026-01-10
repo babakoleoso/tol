@@ -1,0 +1,629 @@
+<!-- =========================================================
+ SwamiG Institute — Module 0 (Orientation, Authority & Alignment)
+ File: module-0.html
+ Notes:
+  - Static HTML (GitHub Pages / Cloudflare Pages).
+  - No external assets required.
+  - If you have an SGI logo in the same folder, name it: sgi-logo.png
+    (optional; page will still look good without it).
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>SwamiG Institute — Module 0: Orientation, Authority & Alignment</title>
+  <meta name="description" content="SwamiG Institute Module 0 establishes orientation before practice: the Four Entry Pillars, the Three Realms, and the STOP principle that seals knowledge in ethical service." />
+
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --card:rgba(20,20,28,.92); --soft:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166;
+      --ok:#4ade80; --warn:#fbbf24; --bad:#fb7185;
+      --shadow: 0 18px 44px rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(187,102,255,.18), transparent 55%),
+        radial-gradient(900px 520px at 95% 0%, rgba(255,209,102,.13), transparent 60%),
+        radial-gradient(900px 520px at 60% 110%, rgba(187,102,255,.12), transparent 60%),
+        var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    header{
+      display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+      padding:14px 16px; border:1px solid var(--border); background:rgba(0,0,0,.25);
+      border-radius:999px; box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      position:sticky; top:10px; z-index:5; backdrop-filter: blur(10px);
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:250px}
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      border:1px solid var(--border);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,209,102,.45), rgba(187,102,255,.18) 55%, rgba(0,0,0,.15) 70%),
+        rgba(255,255,255,.04);
+      box-shadow: 0 0 0 6px rgba(187,102,255,.08);
+      overflow:hidden;
+      display:grid; place-items:center;
+      position:relative;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover; display:block}
+    .pulse{
+      position:absolute; inset:-8px;
+      border-radius:16px;
+      border:1px solid rgba(187,102,255,.35);
+      animation:pulse 2.8s ease-in-out infinite;
+      pointer-events:none;
+    }
+    @keyframes pulse{
+      0%,100%{opacity:.25; transform:scale(.98)}
+      50%{opacity:.55; transform:scale(1.03)}
+    }
+    .brand h1{margin:0; font-size:14px; letter-spacing:.18em; text-transform:uppercase}
+    .brand .sub{margin:2px 0 0; color:var(--muted); font-size:12px}
+    nav{display:flex; gap:10px; flex-wrap:wrap}
+    .pill{
+      text-decoration:none;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:13px;
+      transition:.2s transform,.2s background,.2s color;
+    }
+    .pill:hover{transform:translateY(-1px); background:rgba(255,255,255,.07); color:var(--ink)}
+    .pill strong{color:var(--ink); font-weight:700}
+
+    .hero{
+      margin-top:22px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-inner{
+      padding:26px 22px 20px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:start;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(187,102,255,.10);
+      color:var(--ink);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      width:fit-content;
+    }
+    .dot{width:8px; height:8px; border-radius:99px; background:var(--accent2); box-shadow:0 0 0 6px rgba(255,209,102,.12)}
+    .hero h2{margin:14px 0 8px; font-size:34px; line-height:1.15}
+    .hero p{margin:0; color:var(--muted); font-size:16px}
+    .callouts{
+      display:grid; gap:10px;
+    }
+    .callout{
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.20);
+      border-radius:18px;
+      padding:14px 14px 12px;
+    }
+    .callout .t{font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:12px}
+    .callout .d{margin-top:6px; color:var(--muted); font-size:13px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top:10px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,209,102,.10);
+      color:var(--ink);
+      font-size:12px;
+      width:fit-content;
+    }
+
+    .grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      border-radius:var(--radius);
+      box-shadow: 0 14px 34px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:18px 18px 0;
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .card .hd h3{margin:0; font-size:18px}
+    .card .hd .meta{color:var(--muted); font-size:12px}
+    .card .bd{padding:12px 18px 18px}
+    .hr{height:1px; background:var(--border); margin:14px 0}
+
+    .two{grid-column: span 12}
+    @media (min-width: 920px){
+      .hero-inner{grid-template-columns: 1.2fr .8fr}
+      .two{grid-column: span 6}
+    }
+
+    .list{
+      margin:0; padding-left:18px;
+      color:var(--muted);
+    }
+    .list li{margin:8px 0}
+    .list b{color:var(--ink)}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .chip{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      border-radius:999px;
+      padding:8px 10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .chip span{color:var(--ink); font-weight:800}
+
+    .note{
+      border-left:4px solid rgba(187,102,255,.65);
+      background:rgba(187,102,255,.10);
+      padding:14px 14px;
+      border-radius:16px;
+      color:var(--muted);
+    }
+    .note b{color:var(--ink)}
+
+    .table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--border);
+    }
+    .table th, .table td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+      text-align:left;
+      font-size:14px;
+    }
+    .table th{
+      color:var(--ink);
+      background:rgba(0,0,0,.25);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .table tr:last-child td{border-bottom:none}
+    .table td{color:var(--muted)}
+    .table td b{color:var(--ink)}
+
+    .check{
+      display:grid; gap:10px;
+      margin-top:10px;
+    }
+    .check label{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(0,0,0,.18);
+    }
+    .check input{margin-top:3px; transform:scale(1.05)}
+    .check small{display:block; color:var(--muted); margin-top:3px}
+
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .btn{
+      cursor:pointer;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      color:var(--ink);
+      padding:10px 12px;
+      border-radius:14px;
+      font-weight:700;
+      letter-spacing:.02em;
+      transition:.2s transform,.2s background;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08)}
+    .btn.primary{
+      border-color: rgba(187,102,255,.55);
+      background: rgba(187,102,255,.18);
+      box-shadow: 0 0 0 6px rgba(187,102,255,.08);
+    }
+    .btn.primary:hover{background: rgba(187,102,255,.24)}
+    .btn.warn{
+      border-color: rgba(255,209,102,.55);
+      background: rgba(255,209,102,.14);
+    }
+
+    .footer{
+      margin-top:20px;
+      text-align:center;
+      color:rgba(191,195,209,.7);
+      font-size:12px;
+    }
+    .footer .sig{
+      display:inline-block;
+      margin-top:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* Print */
+    @media print{
+      header{position:static; box-shadow:none}
+      .hero, .card{box-shadow:none}
+      .btn, nav, .actions{display:none !important}
+      body{background:#fff; color:#111}
+      .table th{background:#f2f2f2}
+      .note{background:#f4f0ff}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand" aria-label="SwamiG Institute">
+        <div class="logo" title="SwamiG Institute">
+          <!-- Optional local logo in same folder -->
+          <!-- <img src="sgi-logo.png" alt="SwamiG Institute Logo"> -->
+          <div class="pulse" aria-hidden="true"></div>
+        </div>
+        <div>
+          <h1>SwamiG Institute</h1>
+          <div class="sub">Module 0 • Orientation, Authority & Alignment</div>
+        </div>
+      </div>
+
+      <nav aria-label="Module navigation">
+        <a class="pill" href="#start"><strong>START</strong> Pillars</a>
+        <a class="pill" href="#realms">Three Realms</a>
+        <a class="pill" href="#stop"><strong>STOP</strong> Principle</a>
+        <a class="pill" href="#checklist">Checklist</a>
+      </nav>
+    </header>
+
+    <section class="hero" role="banner">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot"></span>Module 0 — Orientation First</div>
+          <h2>Before you seek power, learn order.</h2>
+          <p>
+            Module 0 establishes the SwamiG Institute standard: the Four Entry Pillars, the Three Realms of operation,
+            and the <b>STOP</b> principle that seals knowledge into ethical service.
+          </p>
+
+          <div class="badge" title="Core doctrine">
+            <span aria-hidden="true">⟡</span>
+            <span><b>Central Teaching:</b> One cosmology • multiple functions • governed by structure</span>
+          </div>
+        </div>
+
+        <div class="callouts" aria-label="Quick outcomes">
+          <div class="callout">
+            <div class="t">Outcome</div>
+            <div class="d">You learn where you are entering, what governs the system, and how ascent returns to service.</div>
+          </div>
+          <div class="callout">
+            <div class="t">Authority</div>
+            <div class="d">SwamiG Institute functions as the <b>transmission mechanism</b>: structure, ethics, accountability, certification.</div>
+          </div>
+          <div class="callout">
+            <div class="t">Non-negotiable</div>
+            <div class="d"><b>STOP</b> is mastery: seal knowledge, end ego ascent, return wisdom to the human realm.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+
+      <!-- START -->
+      <section id="start" class="card" aria-label="START: Four Entry Pillars">
+        <div class="hd">
+          <h3>START — The Four Entry Pillars</h3>
+          <div class="meta">Orientation • Definitions • Boundaries</div>
+        </div>
+        <div class="bd">
+          <p class="note">
+            <b>SGI Rule:</b> These are not competing religions. They are aligned functions of one cosmology.
+            SwamiG Institute ensures the student receives power, law, and knowledge with containment.
+          </p>
+
+          <div class="chips" aria-label="Pillars">
+            <div class="chip"><span>1</span> Orisha — power in form</div>
+            <div class="chip"><span>2</span> Kemet — law behind power</div>
+            <div class="chip"><span>3</span> SwamiG Institute — controlled transmission</div>
+            <div class="chip"><span>4</span> Ifá — truth & verification</div>
+          </div>
+
+          <div class="hr"></div>
+
+          <table class="table" aria-label="Four Pillars table">
+            <thead>
+              <tr>
+                <th style="width:20%">Pillar</th>
+                <th style="width:40%">Function</th>
+                <th>What it protects you from</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Orisha</b></td>
+                <td>Embodied divine forces; nature intelligence; lineage spirituality; ritual expression.</td>
+                <td>Disconnection from life, body, community; power without grounding.</td>
+              </tr>
+              <tr>
+                <td><b>Kemet</b></td>
+                <td>Ma’at: balance, order, ethics; cosmic governance; disciplined consciousness.</td>
+                <td>Power without law; spiritual chaos; emotional rulership.</td>
+              </tr>
+              <tr>
+                <td><b>SwamiG Institute</b></td>
+                <td>Structure, pedagogy, containment; accountability; certification; safety protocols.</td>
+                <td>Fragmentation, ego ascent, misinformation, unauthorized practice.</td>
+              </tr>
+              <tr>
+                <td><b>Ifá</b></td>
+                <td>Divine intelligence; destiny (Ori); witness consciousness; verification and correction.</td>
+                <td>Self-deception; “I think/I feel” replacing truth; untested claims.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Correspondence -->
+      <section class="card two" aria-label="Correspondence: Not Competition">
+        <div class="hd">
+          <h3>Correspondence — Not Competition</h3>
+          <div class="meta">Comparative clarity for curriculum</div>
+        </div>
+        <div class="bd">
+          <p class="note">
+            <b>SGI Policy:</b> Correspondence is used for education and alignment.
+            It is <b>not</b> used to rank traditions, replace cultures, or inflate identity.
+          </p>
+          <ul class="list">
+            <li><b>Purpose:</b> shared principles, different languages</li>
+            <li><b>Method:</b> compare function → confirm ethics → validate results</li>
+            <li><b>Rule:</b> power must return to service, not personal status</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Realms -->
+      <section id="realms" class="card two" aria-label="Three Realms of Operation">
+        <div class="hd">
+          <h3>The Three Realms</h3>
+          <div class="meta">Human • Natural • Cosmic</div>
+        </div>
+        <div class="bd">
+          <p>
+            All work occurs across three realms. Movement between realms must be <b>authorized</b>, <b>disciplined</b>, and <b>ethically contained</b>.
+          </p>
+          <ul class="list">
+            <li><b>Human Realm:</b> body, daily life, ethics, service, relationships</li>
+            <li><b>Natural Realm:</b> forces, elements, cycles, Orisha operations</li>
+            <li><b>Cosmic Realm:</b> law, destiny, divine intelligence, witness truth</li>
+          </ul>
+          <div class="hr"></div>
+          <p class="note">
+            <b>SGI Standard:</b> We do not “escape” the human realm. We refine it.
+            Any ascent that does not return as service is incomplete.
+          </p>
+        </div>
+      </section>
+
+      <!-- STOP -->
+      <section id="stop" class="card" aria-label="STOP Principle">
+        <div class="hd">
+          <h3>STOP — Seal, Close, Return</h3>
+          <div class="meta">The mastery principle</div>
+        </div>
+        <div class="bd">
+          <p class="note">
+            <b>STOP</b> is the most important doctrine in Module 0. It means:
+            seal knowledge, end ego ascent, and return wisdom to ethical service.
+          </p>
+
+          <ul class="list">
+            <li><b>STOP</b> is not fear. It is discipline.</li>
+            <li><b>STOP</b> is not limitation. It is governance.</li>
+            <li><b>STOP</b> is not denial. It is completion.</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <p style="margin:0; color:var(--muted)">
+            <b>Closing Statement:</b><br>
+            “Before you seek knowledge, learn limits. Before you rise, learn where to stop.”
+          </p>
+        </div>
+      </section>
+
+      <!-- Checklist -->
+      <section id="checklist" class="card" aria-label="Module 0 checklist">
+        <div class="hd">
+          <h3>Module 0 Checklist</h3>
+          <div class="meta">Student readiness • internal verification</div>
+        </div>
+        <div class="bd">
+          <p class="note">
+            Check all items before moving to Module 1. This is an SGI readiness gate.
+          </p>
+
+          <form class="check" id="m0Form">
+            <label><input type="checkbox" name="c1">
+              <div>
+                <b>I can explain the Four Entry Pillars (Orisha, Kemet, SwamiG Institute, Ifá).</b>
+                <small>I understand their functions and why they must be aligned.</small>
+              </div>
+            </label>
+
+            <label><input type="checkbox" name="c2">
+              <div>
+                <b>I understand SwamiG Institute as the transmission mechanism.</b>
+                <small>Structure, ethics, accountability, and authorization are required.</small>
+              </div>
+            </label>
+
+            <label><input type="checkbox" name="c3">
+              <div>
+                <b>I can describe the Three Realms (Human, Natural, Cosmic).</b>
+                <small>I understand that ascent must return to the human realm as service.</small>
+              </div>
+            </label>
+
+            <label><input type="checkbox" name="c4">
+              <div>
+                <b>I understand the STOP principle and can apply it.</b>
+                <small>I know how to seal a process and avoid ego-driven escalation.</small>
+              </div>
+            </label>
+
+            <label><input type="checkbox" name="c5">
+              <div>
+                <b>I accept that correspondence is for clarity, not competition.</b>
+                <small>No ranking, replacement, or identity inflation—only disciplined learning.</small>
+              </div>
+            </label>
+          </form>
+
+          <div class="actions">
+            <button class="btn primary" type="button" id="saveBtn">Save Progress</button>
+            <button class="btn" type="button" id="loadBtn">Load Saved</button>
+            <button class="btn warn" type="button" id="printBtn">Print / PDF</button>
+            <span id="status" style="color:var(--muted); font-size:13px; align-self:center;"></span>
+          </div>
+
+          <div class="hr"></div>
+
+          <p class="note" style="margin:0">
+            <b>Gate to Module 1:</b> Only proceed when you can teach Module 0 back clearly and calmly,
+            without exaggeration, urgency, or confusion.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="footer" aria-label="Footer">
+      <div>© <span id="yr"></span> SwamiG Institute • Module 0</div>
+      <div class="sig">Governed by Tehuti (+) Irete</div>
+    </div>
+
+  </div>
+
+  <script>
+    // Minimal local persistence for the checklist (no server required)
+    const KEY = "sgi_module0_checklist_v1";
+    const form = document.getElementById("m0Form");
+    const statusEl = document.getElementById("status");
+    const saveBtn = document.getElementById("saveBtn");
+    const loadBtn = document.getElementById("loadBtn");
+    const printBtn = document.getElementById("printBtn");
+
+    function getState(){
+      const data = {};
+      [...form.elements].forEach(el=>{
+        if(el.type === "checkbox") data[el.name] = !!el.checked;
+      });
+      return data;
+    }
+
+    function setState(data){
+      [...form.elements].forEach(el=>{
+        if(el.type === "checkbox" && Object.prototype.hasOwnProperty.call(data, el.name)){
+          el.checked = !!data[el.name];
+        }
+      });
+    }
+
+    function countChecked(){
+      let total = 0, checked = 0;
+      [...form.elements].forEach(el=>{
+        if(el.type === "checkbox"){
+          total++;
+          if(el.checked) checked++;
+        }
+      });
+      return {total, checked};
+    }
+
+    function setStatus(msg){
+      statusEl.textContent = msg;
+      clearTimeout(setStatus._t);
+      setStatus._t = setTimeout(()=> statusEl.textContent = "", 3500);
+    }
+
+    saveBtn.addEventListener("click", () => {
+      try{
+        localStorage.setItem(KEY, JSON.stringify(getState()));
+        const {total, checked} = countChecked();
+        setStatus(`Saved (${checked}/${total} complete).`);
+      }catch(e){
+        setStatus("Could not save (storage blocked).");
+      }
+    });
+
+    loadBtn.addEventListener("click", () => {
+      try{
+        const raw = localStorage.getItem(KEY);
+        if(!raw){ setStatus("No saved progress found."); return; }
+        setState(JSON.parse(raw));
+        const {total, checked} = countChecked();
+        setStatus(`Loaded (${checked}/${total} complete).`);
+      }catch(e){
+        setStatus("Could not load saved progress.");
+      }
+    });
+
+    printBtn.addEventListener("click", () => window.print());
+
+    // Auto-load if present
+    (function init(){
+      document.getElementById("yr").textContent = new Date().getFullYear();
+      try{
+        const raw = localStorage.getItem(KEY);
+        if(raw) setState(JSON.parse(raw));
+      }catch(e){}
+      const {total, checked} = countChecked();
+      if(checked > 0) setStatus(`Ready (${checked}/${total} checked).`);
+    })();
+  </script>
+</body>
+</html>
