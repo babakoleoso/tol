@@ -1,0 +1,748 @@
+<!-- =========================================================
+ SGI — Khemetian Tree of Life + Ifá (7-Week Hybrid Course)
+ Single-file HTML (static). Works on GitHub Pages / Cloudflare Pages.
+ File: sgi-khemetian-ifa-7week.html
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>SwamiG Institute — Khemetian Tree of Life + Ifá — 7-Week Hybrid Course</title>
+  <meta name="description" content="SwamiG Institute (SGI) — 7-Week Hybrid Course: Khemetian Tree of Life incorporated with Ifá/Orisha (Modules 0–6 + Pre & Post Course)." />
+
+  <style>
+    :root{
+      --bg:#0b0b0f; --ink:#f3f4f6; --muted:#bfc3d1;
+      --card:rgba(20,20,28,.92); --soft:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12); --ring:rgba(187,102,255,.35);
+      --accent:#bb66ff; --accent2:#ffd166;
+      --ok:#4ade80; --warn:#fbbf24; --bad:#fb7185;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    html.light{
+      --bg:#f7f4fb; --ink:#1c1328; --muted:#5b4f6a;
+      --card:rgba(255,255,255,.9); --soft:rgba(27,19,40,.06);
+      --border:rgba(27,19,40,.12); --ring:rgba(187,102,255,.25);
+      --shadow: 0 18px 55px rgba(40,18,60,.18);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(187,102,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(255,209,102,.14), transparent 55%),
+        var(--bg);
+      color:var(--ink);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+    header{
+      display:flex; gap:14px; align-items:flex-start; justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,209,102,.95), rgba(255,209,102,.25) 55%, transparent 70%),
+        radial-gradient(circle at 70% 70%, rgba(187,102,255,.85), rgba(187,102,255,.2) 55%, transparent 70%),
+        linear-gradient(135deg, rgba(187,102,255,.25), rgba(255,209,102,.22));
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo::after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: conic-gradient(from 90deg, transparent, rgba(255,255,255,.25), transparent);
+      animation: shimmer 5.5s linear infinite;
+      opacity:.7;
+    }
+    @keyframes shimmer{
+      0%{transform:translateX(-30%) rotate(0deg)}
+      100%{transform:translateX(30%) rotate(360deg)}
+    }
+    .brand h1{
+      font-size:18px; line-height:1.15; margin:0;
+      letter-spacing:.2px;
+    }
+    .brand .sub{
+      margin:2px 0 0; color:var(--muted); font-size:13px;
+    }
+
+    .actions{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+    .btn{
+      cursor:pointer; user-select:none;
+      padding:10px 12px; border-radius:14px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.02));
+      color:var(--ink);
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      display:inline-flex; gap:8px; align-items:center;
+      font-weight:650; font-size:13px;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(187,102,255,.45); box-shadow: 0 14px 40px rgba(0,0,0,.22);}
+    .btn:active{transform: translateY(0px) scale(.99);}
+    .pill{
+      font-size:12px; color:var(--muted);
+      padding:7px 10px; border:1px solid var(--border);
+      border-radius:999px; background: var(--soft);
+      display:inline-flex; gap:8px; align-items:center;
+      white-space:nowrap;
+    }
+    .dot{width:9px; height:9px; border-radius:99px; background: var(--accent); box-shadow: 0 0 0 6px var(--ring);}
+
+    .hero{
+      margin-top:10px;
+      border-radius: calc(var(--radius) + 8px);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero .inner{
+      padding:22px 18px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+    }
+    .hero h2{margin:0; font-size:22px; letter-spacing:.2px;}
+    .hero p{margin:10px 0 0; color:var(--muted)}
+    .kpi{
+      display:grid; grid-template-columns: 1fr 1fr; gap:10px;
+      align-content:start;
+    }
+    .kpi .card{
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: var(--soft);
+    }
+    .kpi .n{font-size:18px; font-weight:800;}
+    .kpi .t{font-size:12px; color:var(--muted); margin-top:2px;}
+    .hero .stripe{
+      position:absolute; inset:auto 0 0 0; height:4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity:.9;
+    }
+
+    @media (max-width: 880px){
+      .hero .inner{grid-template-columns: 1fr;}
+    }
+
+    .grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .panel{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.02));
+      box-shadow: 0 14px 44px rgba(0,0,0,.22);
+      overflow:hidden;
+    }
+    .panel .hd{
+      padding:14px 16px;
+      border-bottom:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .panel .hd h3{margin:0; font-size:14px; letter-spacing:.2px;}
+    .panel .bd{padding:14px 16px;}
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+    .tiny{font-size:12px}
+
+    .toc{
+      display:grid; gap:10px;
+    }
+    .toc a{
+      text-decoration:none;
+      padding:12px 12px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background: var(--soft);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      transition: transform .12s ease, border-color .12s ease;
+    }
+    .toc a:hover{transform: translateY(-1px); border-color: rgba(255,209,102,.5);}
+    .tag{
+      font-size:11px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(187,102,255,.10);
+      color: var(--ink);
+      white-space:nowrap;
+    }
+    .tag.gold{background: rgba(255,209,102,.14);}
+    .tag.green{background: rgba(74,222,128,.12);}
+    .tag.gray{background: rgba(255,255,255,.08);}
+
+    details.module{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      background: var(--soft);
+      overflow:hidden;
+      margin-bottom:12px;
+    }
+    details.module[open]{box-shadow: 0 12px 34px rgba(0,0,0,.18);}
+    details.module summary{
+      list-style:none;
+      cursor:pointer;
+      padding:14px 14px;
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+    }
+    details.module summary::-webkit-details-marker{display:none;}
+    .sumL{display:flex; gap:10px; align-items:flex-start;}
+    .badge{
+      min-width:44px; height:44px; border-radius:16px;
+      display:grid; place-items:center;
+      font-weight:900;
+      border:1px solid var(--border);
+      background: linear-gradient(135deg, rgba(187,102,255,.22), rgba(255,209,102,.18));
+    }
+    .sumTitle{margin:0; font-weight:850; letter-spacing:.2px;}
+    .sumMeta{margin:4px 0 0; color:var(--muted); font-size:13px;}
+    .chev{
+      width:34px; height:34px; border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      transition: transform .12s ease;
+      margin-top:2px;
+    }
+    details.module[open] .chev{transform: rotate(90deg);}
+    .moduleBody{
+      padding:0 14px 14px;
+      border-top:1px solid var(--border);
+    }
+    .cols{
+      margin-top:12px;
+      display:grid; grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 880px){ .cols{grid-template-columns:1fr;} }
+
+    .box{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding:12px 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+    }
+    .box h4{margin:0 0 8px; font-size:13px;}
+    ul{margin:8px 0 0 18px; padding:0;}
+    li{margin:6px 0;}
+    .checklist label{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:8px 10px;
+      border:1px dashed rgba(255,255,255,.14);
+      border-radius:14px;
+      background: rgba(255,255,255,.03);
+      margin:8px 0;
+    }
+    html.light .checklist label{
+      border-color: rgba(27,19,40,.14);
+      background: rgba(27,19,40,.03);
+    }
+    .checklist input{margin-top:3px; transform: scale(1.05);}
+
+    .note{
+      border-left:4px solid var(--accent);
+      padding:10px 12px;
+      background: rgba(187,102,255,.10);
+      border-radius: 14px;
+      color: var(--ink);
+      margin-top:10px;
+    }
+    .foot{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+
+    /* print */
+    @media print{
+      .actions, .btn, .pill {display:none !important;}
+      body{background:#fff;}
+      .panel, .hero{box-shadow:none;}
+      details.module{page-break-inside:avoid;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>SwamiG Institute (SGI)</h1>
+          <div class="sub">Khemetian Tree of Life incorporated with Ifá / Orisha — 7-Week Hybrid Course</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <span class="pill"><span class="dot"></span> Hybrid • Assignments • Weekly Zoom • Ritual Integration</span>
+        <button class="btn" id="toggleTheme" type="button" aria-label="Toggle theme">
+          <span>Toggle Theme</span>
+          <span aria-hidden="true">☾</span>
+        </button>
+        <button class="btn" type="button" onclick="window.print()">
+          <span>Print</span><span aria-hidden="true">⎙</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="inner">
+        <div>
+          <h2>Course Map (Module Format)</h2>
+          <p>
+            This is the structured SGI outline based on your handwritten page:
+            <strong>Pre-Course</strong> + <strong>Modules 0–6</strong> + <strong>Post-Course</strong>,
+            integrating Orisha/Ifá with Khemetian Tree-of-Life principles.
+          </p>
+          <div class="note tiny">
+            Week 6 is explicitly: <strong>Egun → Sheps</strong> (Ancestors → Transfigured/Perfected beings).
+          </div>
+        </div>
+        <div class="kpi">
+          <div class="card">
+            <div class="n">7</div>
+            <div class="t">Modules (0–6)</div>
+          </div>
+          <div class="card">
+            <div class="n">2</div>
+            <div class="t">Bookends (Pre + Post)</div>
+          </div>
+          <div class="card">
+            <div class="n">1×</div>
+            <div class="t">Weekly Zoom Session</div>
+          </div>
+          <div class="card">
+            <div class="n">1×</div>
+            <div class="t">Weekly Assignment</div>
+          </div>
+        </div>
+      </div>
+      <div class="stripe" aria-hidden="true"></div>
+    </section>
+
+    <section class="grid">
+      <!-- Left: Modules -->
+      <div class="panel" id="modules">
+        <div class="hd">
+          <h3>Modules</h3>
+          <span class="tag gray">Click to expand</span>
+        </div>
+        <div class="bd">
+
+          <!-- Pre-course -->
+          <details class="module" id="pre">
+            <summary>
+              <div class="sumL">
+                <div class="badge">Pre</div>
+                <div>
+                  <div class="sumTitle">Pre-Course Module — Orientation</div>
+                  <div class="sumMeta">Framework • Expectations • Opening Ritual/Ceremony</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Purpose</h4>
+                  <ul>
+                    <li>Set course expectations and ethical posture</li>
+                    <li>Introduce the Tree of Life + Ifá integration method</li>
+                    <li>Prepare participants for weekly practice and reflection</li>
+                  </ul>
+                </div>
+                <div class="box checklist">
+                  <h4>Pre-Course Checklist</h4>
+                  <label><input type="checkbox"> Confirm course calendar + Zoom schedule</label>
+                  <label><input type="checkbox"> Set up a journal/logbook</label>
+                  <label><input type="checkbox"> Prepare basic ritual supplies (as instructed)</label>
+                  <label><input type="checkbox"> Complete Opening Ritual / Ceremony</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Module 0 -->
+          <details class="module" id="m0">
+            <summary>
+              <div class="sumL">
+                <div class="badge">0</div>
+                <div>
+                  <div class="sumTitle">Module 0 — Obatala</div>
+                  <div class="sumMeta">Khemetian: Amen / Ausar</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Alignment</h4>
+                  <ul>
+                    <li><strong>Orisha:</strong> Obatala</li>
+                    <li><strong>Khemetian:</strong> Amen / Ausar</li>
+                  </ul>
+                  <div class="note tiny">Focus: purity, stillness, divine order.</div>
+                </div>
+                <div class="box checklist">
+                  <h4>Weekly Deliverables</h4>
+                  <label><input type="checkbox"> 1 assignment submitted</label>
+                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Module 1 -->
+          <details class="module" id="m1">
+            <summary>
+              <div class="sumL">
+                <div class="badge">1</div>
+                <div>
+                  <div class="sumTitle">Module 1 — Orunmila</div>
+                  <div class="sumMeta">Khemetian: Tehuti / Ma’at</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Alignment</h4>
+                  <ul>
+                    <li><strong>Orisha:</strong> Orunmila</li>
+                    <li><strong>Khemetian:</strong> Tehuti / Ma’at</li>
+                  </ul>
+                  <div class="note tiny">Focus: wisdom, truth, divination.</div>
+                </div>
+                <div class="box checklist">
+                  <h4>Weekly Deliverables</h4>
+                  <label><input type="checkbox"> 1 assignment submitted</label>
+                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Module 2 -->
+          <details class="module" id="m2">
+            <summary>
+              <div class="sumL">
+                <div class="badge">2</div>
+                <div>
+                  <div class="sumTitle">Module 2 — Obaluaye</div>
+                  <div class="sumMeta">Khemetian: Sebek / Heru-Urti</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Alignment</h4>
+                  <ul>
+                    <li><strong>Orisha:</strong> Obaluaye</li>
+                    <li><strong>Khemetian:</strong> Sebek / Heru-Urti</li>
+                  </ul>
+                </div>
+                <div class="box checklist">
+                  <h4>Weekly Deliverables</h4>
+                  <label><input type="checkbox"> 1 assignment submitted</label>
+                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Module 3 -->
+          <details class="module" id="m3">
+            <summary>
+              <div class="sumL">
+                <div class="badge">3</div>
+                <div>
+                  <div class="sumTitle">Module 3 — Shango</div>
+                  <div class="sumMeta">Khemetian: Heru-Sebek / Het-Heru</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Alignment</h4>
+                  <ul>
+                    <li><strong>Orisha:</strong> Shango</li>
+                    <li><strong>Khemetian:</strong> Heru-Sebek / Het-Heru</li>
+                  </ul>
+                </div>
+                <div class="box checklist">
+                  <h4>Weekly Deliverables</h4>
+                  <label><input type="checkbox"> 1 assignment submitted</label>
+                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Module 4 -->
+          <details class="module" id="m4">
+            <summary>
+              <div class="sumL">
+                <div class="badge">4</div>
+                <div>
+                  <div class="sumTitle">Module 4 — Yemoja</div>
+                  <div class="sumMeta">Khemetian: Auset / Geb</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Alignment</h4>
+                  <ul>
+                    <li><strong>Orisha:</strong> Yemoja</li>
+                    <li><strong>Khemetian:</strong> Auset / Geb</li>
+                  </ul>
+                </div>
+                <div class="box checklist">
+                  <h4>Weekly Deliverables</h4>
+                  <label><input type="checkbox"> 1 assignment submitted</label>
+                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Module 5 -->
+          <details class="module" id="m5">
+            <summary>
+              <div class="sumL">
+                <div class="badge">5</div>
+                <div>
+                  <div class="sumTitle">Module 5 — Oya (Astrology)</div>
+                  <div class="sumMeta">Khemetian: Nebthet / Wadjet</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Alignment</h4>
+                  <ul>
+                    <li><strong>Orisha:</strong> Oya (Astrology noted)</li>
+                    <li><strong>Khemetian:</strong> Nebthet / Wadjet</li>
+                  </ul>
+                </div>
+                <div class="box checklist">
+                  <h4>Weekly Deliverables</h4>
+                  <label><input type="checkbox"> 1 assignment submitted</label>
+                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Module 6 -->
+          <details class="module" id="m6">
+            <summary>
+              <div class="sumL">
+                <div class="badge">6</div>
+                <div>
+                  <div class="sumTitle">Module 6 — Egun</div>
+                  <div class="sumMeta">Khemetian: Sheps</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Alignment</h4>
+                  <ul>
+                    <li><strong>Orisha:</strong> <strong>Egun</strong></li>
+                    <li><strong>Khemetian:</strong> <strong>Sheps</strong></li>
+                  </ul>
+                  <div class="note tiny">
+                    Week 6 (Module 6) is written as: <strong>Egun — Sheps</strong>.
+                  </div>
+                </div>
+                <div class="box checklist">
+                  <h4>Weekly Deliverables</h4>
+                  <label><input type="checkbox"> 1 assignment submitted</label>
+                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Post-course -->
+          <details class="module" id="post">
+            <summary>
+              <div class="sumL">
+                <div class="badge">Post</div>
+                <div>
+                  <div class="sumTitle">Post-Course Module — Integration</div>
+                  <div class="sumMeta">Closing Ritual/Ceremony • Reflection • Next Steps</div>
+                </div>
+              </div>
+              <div class="chev" aria-hidden="true">›</div>
+            </summary>
+            <div class="moduleBody">
+              <div class="cols">
+                <div class="box">
+                  <h4>Purpose</h4>
+                  <ul>
+                    <li>Seal the learning</li>
+                    <li>Document outcomes and personal changes</li>
+                    <li>Confirm next-step pathway (advanced study / initiation track)</li>
+                  </ul>
+                </div>
+                <div class="box checklist">
+                  <h4>Post-Course Checklist</h4>
+                  <label><input type="checkbox"> Complete Closing Ritual / Ceremony</label>
+                  <label><input type="checkbox"> Submit final reflection</label>
+                  <label><input type="checkbox"> Archive journal/logbook</label>
+                  <label><input type="checkbox"> Identify next module/certification path</label>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+      <!-- Right: TOC + Course Components -->
+      <aside class="panel">
+        <div class="hd">
+          <h3>Quick Navigation</h3>
+          <span class="tag gold">SGI Course Map</span>
+        </div>
+        <div class="bd">
+          <div class="toc">
+            <a href="#pre"><span>Pre-Course Orientation</span><span class="tag">Pre</span></a>
+            <a href="#m0"><span>Module 0 — Obatala</span><span class="tag">Week 0</span></a>
+            <a href="#m1"><span>Module 1 — Orunmila</span><span class="tag">Week 1</span></a>
+            <a href="#m2"><span>Module 2 — Obaluaye</span><span class="tag">Week 2</span></a>
+            <a href="#m3"><span>Module 3 — Shango</span><span class="tag">Week 3</span></a>
+            <a href="#m4"><span>Module 4 — Yemoja</span><span class="tag">Week 4</span></a>
+            <a href="#m5"><span>Module 5 — Oya (Astrology)</span><span class="tag">Week 5</span></a>
+            <a href="#m6"><span>Module 6 — Egun</span><span class="tag green">Week 6</span></a>
+            <a href="#post"><span>Post-Course Integration</span><span class="tag">Post</span></a>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="box">
+            <h4>Course Components (from your notes)</h4>
+            <ul>
+              <li><strong>Weekly assignments</strong></li>
+              <li><strong>Weekly Zoom session</strong></li>
+              <li><strong>Pre-course ritual / ceremony</strong></li>
+              <li><strong>Ritual / ceremony</strong> (integrated through the course)</li>
+              <li><strong>Post-ritual integration</strong></li>
+            </ul>
+            <div class="note tiny">
+              Tip: Use the checklists inside each module to track completion.
+              Your checkmarks are saved in your browser (if supported) only if you keep the tab/session.
+            </div>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="box">
+            <h4>Optional SGI Admin Fields</h4>
+            <ul class="tiny">
+              <li>Facilitator name</li>
+              <li>Zoom link + schedule</li>
+              <li>Assignment submission method (email/form)</li>
+              <li>Certification criteria</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="foot">
+      © SwamiG Institute (SGI) • Course Outline (Module Format) • Built for static hosting
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle (dark ↔ light) + persistence
+    (function(){
+      const root = document.documentElement;
+      const btn = document.getElementById('toggleTheme');
+      const key = 'sgi_theme_pref_v1';
+
+      function setTheme(mode){
+        if(mode === 'light'){ root.classList.add('light'); btn.lastElementChild.textContent = '☀'; }
+        else { root.classList.remove('light'); btn.lastElementChild.textContent = '☾'; }
+        try{ localStorage.setItem(key, mode); }catch(e){}
+      }
+
+      // init
+      let saved = null;
+      try{ saved = localStorage.getItem(key); }catch(e){}
+      if(saved === 'light' || saved === 'dark'){
+        setTheme(saved);
+      } else {
+        // default to dark, but respect OS if possible
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        setTheme(prefersLight ? 'light' : 'dark');
+      }
+
+      btn.addEventListener('click', () => {
+        const isLight = root.classList.contains('light');
+        setTheme(isLight ? 'dark' : 'light');
+      });
+    })();
+
+    // Optional: open the currently-hashed module automatically
+    (function(){
+      const hash = window.location.hash;
+      if(!hash) return;
+      const el = document.querySelector(hash);
+      if(el && el.tagName.toLowerCase() === 'details'){
+        el.open = true;
+        setTimeout(()=>el.scrollIntoView({behavior:'smooth', block:'start'}), 150);
+      }
+    })();
+  </script>
+</body>
+</html>
