@@ -4,6 +4,7 @@
  File: sgi-khemetian-ifa-7week.html
  Notes:
   - Put this file in the SAME folder as: SwamiG.gif
+  - SEO upgrades: canonical, OG/Twitter, JSON-LD Course schema, better headings, accessibility
 ========================================================= -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +12,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <title>SwamiG Institute — Khemetian Tree of Life + Ifá — 7-Week Hybrid Course</title>
-  <meta name="description" content="SwamiG Institute (SGI) — 7-Week Hybrid Course: Khemetian Tree of Life incorporated with Ifá/Orisha (Modules 0–6 + Pre & Post Course)." />
+
+  <!-- ===== SEO BASICS ===== -->
+  <title>SGI Khemetian Tree of Life + Ifá Course (7-Week Hybrid) | SwamiG Institute</title>
+  <meta name="description" content="SwamiG Institute (SGI) 7-Week Hybrid Course integrating the Khemetian Tree of Life with Ifá/Orisha practice. Includes Pre-Course Orientation, Modules 0–6 (Obatala, Orunmila, Babaluaye, Shango, Yemoja, Oya/Astrology, Egun/Sheps), and Post-Course Integration. Weekly Zoom + assignments + ritual integration." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Canonical (CHANGE this to the exact public URL for this page) -->
+  <link rel="canonical" href="https://swamiginstitute.com/sgi-khemetian-ifa-7week/" />
+
+  <!-- Optional: favicon (uncomment if you add a favicon in the same folder)
+  <link rel="icon" href="favicon.ico">
+  -->
+
+  <!-- Optional: preload the logo for faster LCP -->
+  <link rel="preload" as="image" href="SwamiG.gif" imagesrcset="SwamiG.gif" />
+
+  <!-- ===== Open Graph / Social Preview ===== -->
+  <meta property="og:site_name" content="SwamiG Institute" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SGI — Khemetian Tree of Life + Ifá — 7-Week Hybrid Course" />
+  <meta property="og:description" content="A structured SGI course map integrating Orisha/Ifá with Khemetian Tree-of-Life principles: Pre-Course + Modules 0–6 + Post-Course. Weekly Zoom, assignments, and ritual integration." />
+  <!-- Use an absolute URL to a share image if possible (recommended 1200x630). If you don't have one yet, leave as SwamiG.gif but ideally create a proper OG image. -->
+  <meta property="og:image" content="SwamiG.gif" />
+  <meta property="og:url" content="https://swamiginstitute.com/sgi-khemetian-ifa-7week/" />
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SGI — Khemetian Tree of Life + Ifá — 7-Week Hybrid Course" />
+  <meta name="twitter:description" content="Pre-Course + Modules 0–6 + Post-Course integration. Weekly Zoom + assignments + ritual integration." />
+  <meta name="twitter:image" content="SwamiG.gif" />
+
+  <!-- ===== Structured Data: Course (JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Khemetian Tree of Life + Ifá — 7-Week Hybrid Course",
+    "description": "SwamiG Institute (SGI) 7-Week Hybrid Course integrating the Khemetian Tree of Life with Ifá/Orisha practice. Includes Pre-Course Orientation, Modules 0–6, and Post-Course Integration. Weekly Zoom + assignments + ritual integration.",
+    "provider": {
+      "@type": "Organization",
+      "name": "SwamiG Institute",
+      "url": "https://swamiginstitute.com"
+    },
+    "educationalLevel": "Intermediate",
+    "inLanguage": "en",
+    "timeRequired": "P7W",
+    "courseMode": ["online", "blended", "hybrid"],
+    "url": "https://swamiginstitute.com/sgi-khemetian-ifa-7week/",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": ["online", "blended", "hybrid"],
+      "inLanguage": "en"
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -43,14 +98,25 @@
       font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
     }
     a{color:inherit}
+
+    /* Skip link for accessibility + SEO crawl friendliness */
+    .skip-link{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:12px; width:auto; height:auto;
+      padding:10px 12px; border-radius:12px;
+      background: var(--card); border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      z-index:9999;
+    }
+
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
     header{
       display:flex; gap:14px; align-items:flex-start; justify-content:space-between;
       margin-bottom:18px;
     }
-    .brand{
-      display:flex; gap:12px; align-items:center;
-    }
+    .brand{display:flex; gap:12px; align-items:center;}
 
     /* ===== CLICKABLE SGI LOGO (image) ===== */
     .logo{
@@ -107,6 +173,15 @@
       margin:2px 0 0; color:var(--muted); font-size:13px;
     }
 
+    /* Hidden H1 for SEO without changing visuals (still accessible) */
+    .sr-only{
+      position:absolute!important;
+      width:1px; height:1px;
+      padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0);
+      white-space:nowrap; border:0;
+    }
+
     .actions{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
     .btn{
       cursor:pointer; user-select:none;
@@ -118,9 +193,11 @@
       display:inline-flex; gap:8px; align-items:center;
       font-weight:650; font-size:13px;
       transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+      text-decoration:none;
     }
     .btn:hover{transform: translateY(-1px); border-color: rgba(187,102,255,.45); box-shadow: 0 14px 40px rgba(0,0,0,.22);}
     .btn:active{transform: translateY(0px) scale(.99);}
+
     .pill{
       font-size:12px; color:var(--muted);
       padding:7px 10px; border:1px solid var(--border);
@@ -197,9 +274,7 @@
     .small{font-size:13px}
     .tiny{font-size:12px}
 
-    .toc{
-      display:grid; gap:10px;
-    }
+    .toc{display:grid; gap:10px;}
     .toc a{
       text-decoration:none;
       padding:12px 12px;
@@ -318,6 +393,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <div class="wrap">
     <header>
       <div class="brand">
@@ -328,422 +405,436 @@
            aria-label="SwamiG Institute Home"
            title="SwamiG Institute Home">
           <img src="SwamiG.gif"
-               alt="SwamiG Institute (SGI) Logo"
+               alt="SwamiG Institute (SGI) logo"
                loading="eager"
                decoding="async"
                onerror="this.remove();document.getElementById('sgiLogo').classList.add('fallback');">
         </a>
 
         <div>
-          <h1>SwamiG Institute</h1>                          
-           <font size="1"><i>(Universal Priesthood PreCourse)</i></font>
-          <div class="sub"><i>Khemetian Tree of Life incorporated with Ifá / Orisha — 7-Week Hybrid Course</i></div>
+          <!-- Visible brand title stays as-is -->
+          <h1>SwamiG Institute</h1>
+          <!-- SEO H1 (screen-reader only) -->
+          <div class="sr-only">
+            <h1>Khemetian Tree of Life + Ifá — 7-Week Hybrid Course (SGI)</h1>
+          </div>
+
+          <div class="sub">
+            <i>(Universal Priesthood PreCourse) — Khemetian Tree of Life incorporated with Ifá / Orisha — 7-Week Hybrid Course</i>
+          </div>
         </div>
       </div>
 
       <div class="actions">
         <span class="pill"><span class="dot"></span> Hybrid • Assignments • Weekly Zoom • Ritual Integration</span>
+
         <button class="btn" id="toggleTheme" type="button" aria-label="Toggle theme">
           <span>Toggle Theme</span>
           <span aria-hidden="true"></span>
         </button>
-        <button class="btn" type="button" onclick="window.print()">
+
+        <button class="btn" type="button" onclick="window.print()" aria-label="Print this course outline">
           <span>Print</span><span aria-hidden="true"></span>
         </button>
 
-        <span class="pill"><span class="dot"></span><a href="https://forms.gle/KcvY9y9qVQ6w19Kt7"><font color="#ff8040">APPLY</font></a></span>
+        <!-- Make APPLY a real crawlable link/button -->
+        <a class="btn" href="https://forms.gle/KcvY9y9qVQ6w19Kt7" aria-label="Apply for the SGI Khemetian Tree of Life + Ifá course">
+          <span>APPLY</span>
+        </a>
       </div>
     </header>
 
-    <section class="hero">
-      <div class="inner">
-        <div>
-          <h2>Course Map (Module Format)</h2>
-          <p>
-            This is the structured SGI outline :
-            <strong>Pre-Course</strong> + <strong>Modules 0–6</strong> + <strong>Post-Course</strong>,
-            integrating Orisha/Ifá with Khemetian Tree-of-Life principles.
-          </p>
-          <div class="note tiny">
-            Week 6 is explicitly: <strong>Egun / Sheps</strong> (Ancestors - Transfigured/Perfecting energies).
+    <main id="main" role="main">
+      <section class="hero" aria-label="Course overview">
+        <div class="inner">
+          <div>
+            <h2>Course Map (Module Format)</h2>
+            <p>
+              This is the structured SGI outline:
+              <strong>Pre-Course</strong> + <strong>Modules 0–6</strong> + <strong>Post-Course</strong>,
+              integrating Orisha/Ifá with Khemetian Tree-of-Life principles.
+            </p>
+            <div class="note tiny">
+              Week 6 is explicitly: <strong>Egun / Sheps</strong> (Ancestors — transfigured/perfecting energies).
+            </div>
+          </div>
+          <div class="kpi" aria-label="Course facts">
+            <div class="card">
+              <div class="n">7</div>
+              <div class="t">Modules (0–6)</div>
+            </div>
+            <div class="card">
+              <div class="n">2</div>
+              <div class="t">Bookends (Pre + Post ceremony)</div>
+            </div>
+            <div class="card">
+              <div class="n">1×</div>
+              <div class="t">Weekly Zoom Session</div>
+            </div>
+            <div class="card">
+              <div class="n">1×</div>
+              <div class="t">Weekly Assignment</div>
+            </div>
           </div>
         </div>
-        <div class="kpi">
-          <div class="card">
-            <div class="n">7</div>
-            <div class="t">Modules (0–6)</div>
+        <div class="stripe" aria-hidden="true"></div>
+      </section>
+
+      <section class="grid" aria-label="Course modules and navigation">
+        <!-- Left: Modules -->
+        <div class="panel" id="modules">
+          <div class="hd">
+            <h3>Modules</h3>
+            <span class="tag gray">Click to expand</span>
           </div>
-          <div class="card">
-            <div class="n">2</div>
-            <div class="t">Bookends (Pre + Post ceremony)</div>
-          </div>
-          <div class="card">
-            <div class="n">1×</div>
-            <div class="t">Weekly Zoom Session</div>
-          </div>
-          <div class="card">
-            <div class="n">1×</div>
-            <div class="t">Weekly Assignment</div>
-          </div>
-        </div>
-      </div>
-      <div class="stripe" aria-hidden="true"></div>
-    </section>
+          <div class="bd">
 
-    <section class="grid">
-      <!-- Left: Modules -->
-      <div class="panel" id="modules">
-        <div class="hd">
-          <h3>Modules</h3>
-          <span class="tag gray">Click to expand</span>
-        </div>
-        <div class="bd">
-
-          <!-- Pre-course -->
-          <details class="module" id="pre">
-            <summary>
-              <div class="sumL">
-                <div class="badge">Pre</div>
-                <div>
-                  <div class="sumTitle">Pre-Course Module — Orientation</div>
-                  <div class="sumMeta">Framework • Expectations • Opening Ritual/Ceremony</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Purpose</h4>
-                  <ul>
-                    <li>Set course expectations and ethical posture</li>
-                    <li>Introduce the Tree of Life + Ifá integration method</li>
-                    <li>Prepare participants for weekly practice and reflection</li>
-                  </ul>
-                </div>
-                <div class="box checklist">
-                  <h4>Pre-Course Checklist</h4>
-                  <label><input type="checkbox"> Confirm course calendar + Zoom schedule</label>
-                  <label><input type="checkbox"> Set up a journal/logbook</label>
-                  <label><input type="checkbox"> Prepare basic ritual supplies (as instructed)</label>
-                  <label><input type="checkbox"> Complete Opening Ritual / Ceremony</label>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Module 0 -->
-          <details class="module" id="m0">
-            <summary>
-              <div class="sumL">
-                <div class="badge">0</div>
-                <div>
-                  <div class="sumTitle">Module 0 — Obatala</div>
-                  <div class="sumMeta">Khemetian: Amen / Ausar</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Alignment</h4>
-                  <ul>
-                    <li><strong>Orisha:</strong> Obatala</li>
-                    <li><strong>Khemetian:</strong> Amen / Ausar</li>
-                  </ul>
-                  <div class="note tiny">Focus: purity, stillness, divine order.</div>
-                </div>
-                <div class="box checklist">
-                  <h4>Weekly Deliverables</h4>
-                  <label><input type="checkbox"> 1 assignment submitted</label>
-                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
-                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Module 1 -->
-          <details class="module" id="m1">
-            <summary>
-              <div class="sumL">
-                <div class="badge">1</div>
-                <div>
-                  <div class="sumTitle">Module 1 — Orunmila</div>
-                  <div class="sumMeta">Khemetian: Tehuti / Ma’at</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Alignment</h4>
-                  <ul>
-                    <li><strong>Orisha:</strong> Orunmila</li>
-                    <li><strong>Khemetian:</strong> Tehuti / Ma’at</li>
-                  </ul>
-                  <div class="note tiny">Focus: wisdom, truth, divination.</div>
-                </div>
-                <div class="box checklist">
-                  <h4>Weekly Deliverables</h4>
-                  <label><input type="checkbox"> 1 assignment submitted</label>
-                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
-                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Module 2 -->
-          <details class="module" id="m2">
-            <summary>
-              <div class="sumL">
-                <div class="badge">2</div>
-                <div>
-                  <div class="sumTitle">Module 2 — Babaluaye</div>
-                  <div class="sumMeta">Khemetian: Sebek / Herukhuti</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Alignment</h4>
-                  <ul>
-                    <li><strong>Orisha:</strong> Babaluaye</li>
-                    <li><strong>Khemetian:</strong> Sebek / Herukhuti</li>
-                  </ul>
-                </div>
-                <div class="box checklist">
-                  <h4>Weekly Deliverables</h4>
-                  <label><input type="checkbox"> 1 assignment submitted</label>
-                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
-                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Module 3 -->
-          <details class="module" id="m3">
-            <summary>
-              <div class="sumL">
-                <div class="badge">3</div>
-                <div>
-                  <div class="sumTitle">Module 3 — Shango</div>
-                  <div class="sumMeta">Khemetian: Heru-Sebek / Het-Heru</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Alignment</h4>
-                  <ul>
-                    <li><strong>Orisha:</strong> Shango</li>
-                    <li><strong>Khemetian:</strong> Heru-Sebek / Het-Heru</li>
-                  </ul>
-                </div>
-                <div class="box checklist">
-                  <h4>Weekly Deliverables</h4>
-                  <label><input type="checkbox"> 1 assignment submitted</label>
-                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
-                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Module 4 -->
-          <details class="module" id="m4">
-            <summary>
-              <div class="sumL">
-                <div class="badge">4</div>
-                <div>
-                  <div class="sumTitle">Module 4 — Yemoja</div>
-                  <div class="sumMeta">Khemetian: Auset / Geb</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Alignment</h4>
-                  <ul>
-                    <li><strong>Orisha:</strong> Yemoja</li>
-                    <li><strong>Khemetian:</strong> Auset / Geb</li>
-                  </ul>
-                </div>
-                <div class="box checklist">
-                  <h4>Weekly Deliverables</h4>
-                  <label><input type="checkbox"> 1 assignment submitted</label>
-                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
-                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Module 5 -->
-          <details class="module" id="m5">
-            <summary>
-              <div class="sumL">
-                <div class="badge">5</div>
-                <div>
-                  <div class="sumTitle">Module 5 — Oya (Astrology)</div>
-                  <div class="sumMeta">Khemetian: Nebthet / Wadjet</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Alignment</h4>
-                  <ul>
-                    <li><strong>Orisha:</strong> Oya (Astrology noted)</li>
-                    <li><strong>Khemetian:</strong> Nebthet / Wadjet</li>
-                  </ul>
-                </div>
-                <div class="box checklist">
-                  <h4>Weekly Deliverables</h4>
-                  <label><input type="checkbox"> 1 assignment submitted</label>
-                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
-                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- Module 6 -->
-          <details class="module" id="m6">
-            <summary>
-              <div class="sumL">
-                <div class="badge">6</div>
-                <div>
-                  <div class="sumTitle">Module 6 — Egun</div>
-                  <div class="sumMeta">Khemetian: Sheps</div>
-                </div>
-              </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Alignment</h4>
-                  <ul>
-                    <li><strong>Orisha:</strong> <strong>Egun</strong></li>
-                    <li><strong>Khemetian:</strong> <strong>Sheps</strong></li>
-                  </ul>
-                  <div class="note tiny">
-                    Week 6 (Module 6) is written as: <strong>Egun — Sheps</strong>.
+            <!-- Pre-course -->
+            <details class="module" id="pre">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">Pre</div>
+                  <div>
+                    <div class="sumTitle">Pre-Course Module — Orientation</div>
+                    <div class="sumMeta">Framework • Expectations • Opening Ritual/Ceremony</div>
                   </div>
                 </div>
-                <div class="box checklist">
-                  <h4>Weekly Deliverables</h4>
-                  <label><input type="checkbox"> 1 assignment submitted</label>
-                  <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
-                  <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Purpose</h4>
+                    <ul>
+                      <li>Set course expectations and ethical posture</li>
+                      <li>Introduce the Tree of Life + Ifá integration method</li>
+                      <li>Prepare participants for weekly practice and reflection</li>
+                    </ul>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Pre-Course Checklist</h4>
+                    <label><input type="checkbox"> Confirm course calendar + Zoom schedule</label>
+                    <label><input type="checkbox"> Set up a journal/logbook</label>
+                    <label><input type="checkbox"> Prepare basic ritual supplies (as instructed)</label>
+                    <label><input type="checkbox"> Complete Opening Ritual / Ceremony</label>
+                  </div>
                 </div>
               </div>
-            </div>
-          </details>
+            </details>
 
-          <!-- Post-course -->
-          <details class="module" id="post">
-            <summary>
-              <div class="sumL">
-                <div class="badge">Post</div>
-                <div>
-                  <div class="sumTitle">Post-Course Module — Integration</div>
-                  <div class="sumMeta">Closing Ritual/Ceremony • Reflection • Next Steps</div>
+            <!-- Module 0 -->
+            <details class="module" id="m0">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">0</div>
+                  <div>
+                    <div class="sumTitle">Module 0 — Obatala</div>
+                    <div class="sumMeta">Khemetian: Amen / Ausar</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Alignment</h4>
+                    <ul>
+                      <li><strong>Orisha:</strong> Obatala</li>
+                      <li><strong>Khemetian:</strong> Amen / Ausar</li>
+                    </ul>
+                    <div class="note tiny">Focus: purity, stillness, divine order.</div>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Weekly Deliverables</h4>
+                    <label><input type="checkbox"> 1 assignment submitted</label>
+                    <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                    <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                  </div>
                 </div>
               </div>
-              <div class="chev" aria-hidden="true">›</div>
-            </summary>
-            <div class="moduleBody">
-              <div class="cols">
-                <div class="box">
-                  <h4>Purpose</h4>
-                  <ul>
-                    <li>Seal the learning</li>
-                    <li>Document outcomes and personal changes</li>
-                    <li>Confirm next-step pathway (advanced study / initiation track)</li>
-                  </ul>
-                </div>
-                <div class="box checklist">
-                  <h4>Post-Course Checklist</h4>
-                  <label><input type="checkbox"> Complete Closing Ritual / Ceremony</label>
-                  <label><input type="checkbox"> Submit final reflection</label>
-                  <label><input type="checkbox"> Archive journal/logbook</label>
-                  <label><input type="checkbox"> Identify next module/certification path</label>
-                </div>
-              </div>
-            </div>
-          </details>
+            </details>
 
+            <!-- Module 1 -->
+            <details class="module" id="m1">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">1</div>
+                  <div>
+                    <div class="sumTitle">Module 1 — Orunmila</div>
+                    <div class="sumMeta">Khemetian: Tehuti / Ma’at</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Alignment</h4>
+                    <ul>
+                      <li><strong>Orisha:</strong> Orunmila</li>
+                      <li><strong>Khemetian:</strong> Tehuti / Ma’at</li>
+                    </ul>
+                    <div class="note tiny">Focus: wisdom, truth, divination.</div>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Weekly Deliverables</h4>
+                    <label><input type="checkbox"> 1 assignment submitted</label>
+                    <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                    <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Module 2 -->
+            <details class="module" id="m2">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">2</div>
+                  <div>
+                    <div class="sumTitle">Module 2 — Babaluaye</div>
+                    <div class="sumMeta">Khemetian: Sebek / Herukhuti</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Alignment</h4>
+                    <ul>
+                      <li><strong>Orisha:</strong> Babaluaye</li>
+                      <li><strong>Khemetian:</strong> Sebek / Herukhuti</li>
+                    </ul>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Weekly Deliverables</h4>
+                    <label><input type="checkbox"> 1 assignment submitted</label>
+                    <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                    <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Module 3 -->
+            <details class="module" id="m3">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">3</div>
+                  <div>
+                    <div class="sumTitle">Module 3 — Shango</div>
+                    <div class="sumMeta">Khemetian: Heru-Sebek / Het-Heru</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Alignment</h4>
+                    <ul>
+                      <li><strong>Orisha:</strong> Shango</li>
+                      <li><strong>Khemetian:</strong> Heru-Sebek / Het-Heru</li>
+                    </ul>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Weekly Deliverables</h4>
+                    <label><input type="checkbox"> 1 assignment submitted</label>
+                    <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                    <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Module 4 -->
+            <details class="module" id="m4">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">4</div>
+                  <div>
+                    <div class="sumTitle">Module 4 — Yemoja</div>
+                    <div class="sumMeta">Khemetian: Auset / Geb</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Alignment</h4>
+                    <ul>
+                      <li><strong>Orisha:</strong> Yemoja</li>
+                      <li><strong>Khemetian:</strong> Auset / Geb</li>
+                    </ul>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Weekly Deliverables</h4>
+                    <label><input type="checkbox"> 1 assignment submitted</label>
+                    <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                    <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Module 5 -->
+            <details class="module" id="m5">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">5</div>
+                  <div>
+                    <div class="sumTitle">Module 5 — Oya (Astrology)</div>
+                    <div class="sumMeta">Khemetian: Nebthet / Wadjet</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Alignment</h4>
+                    <ul>
+                      <li><strong>Orisha:</strong> Oya (Astrology noted)</li>
+                      <li><strong>Khemetian:</strong> Nebthet / Wadjet</li>
+                    </ul>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Weekly Deliverables</h4>
+                    <label><input type="checkbox"> 1 assignment submitted</label>
+                    <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                    <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Module 6 -->
+            <details class="module" id="m6">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">6</div>
+                  <div>
+                    <div class="sumTitle">Module 6 — Egun</div>
+                    <div class="sumMeta">Khemetian: Sheps</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Alignment</h4>
+                    <ul>
+                      <li><strong>Orisha:</strong> <strong>Egun</strong></li>
+                      <li><strong>Khemetian:</strong> <strong>Sheps</strong></li>
+                    </ul>
+                    <div class="note tiny">
+                      Week 6 (Module 6) is written as: <strong>Egun — Sheps</strong>.
+                    </div>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Weekly Deliverables</h4>
+                    <label><input type="checkbox"> 1 assignment submitted</label>
+                    <label><input type="checkbox"> Attend/complete weekly Zoom session</label>
+                    <label><input type="checkbox"> Practice log (minimum 3 entries)</label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <!-- Post-course -->
+            <details class="module" id="post">
+              <summary>
+                <div class="sumL">
+                  <div class="badge">Post</div>
+                  <div>
+                    <div class="sumTitle">Post-Course Module — Integration</div>
+                    <div class="sumMeta">Closing Ritual/Ceremony • Reflection • Next Steps</div>
+                  </div>
+                </div>
+                <div class="chev" aria-hidden="true">›</div>
+              </summary>
+              <div class="moduleBody">
+                <div class="cols">
+                  <div class="box">
+                    <h4>Purpose</h4>
+                    <ul>
+                      <li>Seal the learning</li>
+                      <li>Document outcomes and personal changes</li>
+                      <li>Confirm next-step pathway (advanced study / initiation track)</li>
+                    </ul>
+                  </div>
+                  <div class="box checklist">
+                    <h4>Post-Course Checklist</h4>
+                    <label><input type="checkbox"> Complete Closing Ritual / Ceremony</label>
+                    <label><input type="checkbox"> Submit final reflection</label>
+                    <label><input type="checkbox"> Archive journal/logbook</label>
+                    <label><input type="checkbox"> Identify next module/certification path</label>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+          </div>
         </div>
+
+        <!-- Right: TOC + Course Components -->
+        <aside class="panel" aria-label="Quick navigation">
+          <div class="hd">
+            <h3>Quick Navigation</h3>
+            <span class="tag gold">SGI Course Map</span>
+          </div>
+          <div class="bd">
+            <nav class="toc" aria-label="Table of contents">
+              <a href="#pre"><span>Pre-Course Orientation</span><span class="tag">Pre</span></a>
+              <a href="#m0"><span>Module 0 — Obatala</span><span class="tag">Week 0</span></a>
+              <a href="#m1"><span>Module 1 — Orunmila</span><span class="tag">Week 1</span></a>
+              <a href="#m2"><span>Module 2 — Babaluaye</span><span class="tag">Week 2</span></a>
+              <a href="#m3"><span>Module 3 — Shango</span><span class="tag">Week 3</span></a>
+              <a href="#m4"><span>Module 4 — Yemoja</span><span class="tag">Week 4</span></a>
+              <a href="#m5"><span>Module 5 — Oya (Astrology)</span><span class="tag">Week 5</span></a>
+              <a href="#m6"><span>Module 6 — Egun</span><span class="tag green">Week 6</span></a>
+              <a href="#post"><span>Post-Course Integration</span><span class="tag">Post</span></a>
+            </nav>
+
+            <div style="height:14px"></div>
+
+            <div class="box">
+              <h4>Course Components</h4>
+              <ul>
+                <li><strong>Weekly assignments</strong></li>
+                <li><strong>Weekly Zoom session</strong></li>
+                <li><strong>Pre-course ritual / ceremony</strong></li>
+                <li><strong>Ritual / ceremony</strong> (integrated through the course)</li>
+                <li><strong>Post-ritual integration</strong></li>
+              </ul>
+              <div class="note tiny">
+                Tip: Use the checklists inside each module to track completion.
+                Your checkmarks are saved in your browser (if supported) only if you keep the tab/session.
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="box">
+              <h4>Optional SGI Admin Fields</h4>
+              <ul class="tiny">
+                <li>Facilitator name</li>
+                <li>Zoom link + schedule</li>
+                <li>Assignment submission method (email/form)</li>
+                <li>Certification criteria</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <div class="foot">
+        © SwamiG Institute (SGI) 2026 • Universal Priesthood Course Outline • Governed by Herukhuti(+)/Ogbe
       </div>
-
-      <!-- Right: TOC + Course Components -->
-      <aside class="panel">
-        <div class="hd">
-          <h3>Quick Navigation</h3>
-          <span class="tag gold">SGI Course Map</span>
-        </div>
-        <div class="bd">
-          <div class="toc">
-            <a href="#pre"><span>Pre-Course Orientation</span><span class="tag">Pre</span></a>
-            <a href="#m0"><span>Module 0 — Obatala</span><span class="tag">Week 0</span></a>
-            <a href="#m1"><span>Module 1 — Orunmila</span><span class="tag">Week 1</span></a>
-            <a href="#m2"><span>Module 2 — Babaluaye</span><span class="tag">Week 2</span></a>
-            <a href="#m3"><span>Module 3 — Shango</span><span class="tag">Week 3</span></a>
-            <a href="#m4"><span>Module 4 — Yemoja</span><span class="tag">Week 4</span></a>
-            <a href="#m5"><span>Module 5 — Oya (Astrology)</span><span class="tag">Week 5</span></a>
-            <a href="#m6"><span>Module 6 — Egun</span><span class="tag green">Week 6</span></a>
-            <a href="#post"><span>Post-Course Integration</span><span class="tag">Post</span></a>
-          </div>
-
-          <div style="height:14px"></div>
-
-          <div class="box">
-            <h4>Course Components (from your notes)</h4>
-            <ul>
-              <li><strong>Weekly assignments</strong></li>
-              <li><strong>Weekly Zoom session</strong></li>
-              <li><strong>Pre-course ritual / ceremony</strong></li>
-              <li><strong>Ritual / ceremony</strong> (integrated through the course)</li>
-              <li><strong>Post-ritual integration</strong></li>
-            </ul>
-            <div class="note tiny">
-              Tip: Use the checklists inside each module to track completion.
-              Your checkmarks are saved in your browser (if supported) only if you keep the tab/session.
-            </div>
-          </div>
-
-          <div style="height:12px"></div>
-
-          <div class="box">
-            <h4>Optional SGI Admin Fields</h4>
-            <ul class="tiny">
-              <li>Facilitator name</li>
-              <li>Zoom link + schedule</li>
-              <li>Assignment submission method (email/form)</li>
-              <li>Certification criteria</li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <div class="foot">
-      © SwamiG Institute (SGI)2026 • Universal Priesthood Course Outline • Governered by Herukhuti(+)/Ogbe
-    </div>
+    </main>
   </div>
 
   <script>
@@ -754,8 +845,8 @@
       const key = 'sgi_theme_pref_v1';
 
       function setTheme(mode){
-        if(mode === 'light'){ root.classList.add('light'); btn.lastElementChild.textContent = '?'; }
-        else { root.classList.remove('light'); btn.lastElementChild.textContent = '?'; }
+        if(mode === 'light'){ root.classList.add('light'); btn.lastElementChild.textContent = '☀'; }
+        else { root.classList.remove('light'); btn.lastElementChild.textContent = '☾'; }
         try{ localStorage.setItem(key, mode); }catch(e){}
       }
 
@@ -765,7 +856,6 @@
       if(saved === 'light' || saved === 'dark'){
         setTheme(saved);
       } else {
-        // default to dark, but respect OS if possible
         const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
         setTheme(prefersLight ? 'light' : 'dark');
       }
