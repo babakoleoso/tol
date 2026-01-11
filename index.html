@@ -2,6 +2,8 @@
  SGI — Khemetian Tree of Life + Ifá (7-Week Hybrid Course)
  Single-file HTML (static). Works on GitHub Pages / Cloudflare Pages.
  File: sgi-khemetian-ifa-7week.html
+ Notes:
+  - Put this file in the SAME folder as: SwamiG.gif
 ========================================================= -->
 <!DOCTYPE html>
 <html lang="en">
@@ -49,18 +51,43 @@
     .brand{
       display:flex; gap:12px; align-items:center;
     }
+
+    /* ===== CLICKABLE SGI LOGO (image) ===== */
     .logo{
       width:42px; height:42px; border-radius:14px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,209,102,.95), rgba(255,209,102,.25) 55%, transparent 70%),
-        radial-gradient(circle at 70% 70%, rgba(187,102,255,.85), rgba(187,102,255,.2) 55%, transparent 70%),
-        linear-gradient(135deg, rgba(187,102,255,.25), rgba(255,209,102,.22));
       border:1px solid var(--border);
       box-shadow: var(--shadow);
       position:relative;
       overflow:hidden;
+      background: rgba(255,255,255,.04);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      flex:0 0 auto;
+      text-decoration:none;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
     }
-    .logo::after{
+    .logo:hover{
+      transform: translateY(-1px);
+      border-color: rgba(187,102,255,.45);
+      box-shadow: 0 24px 70px rgba(0,0,0,.45);
+    }
+    .logo:active{transform: translateY(0px) scale(.99);}
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      padding:4px;
+    }
+    /* fallback shimmer ONLY if image fails */
+    .logo.fallback{
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,209,102,.95), rgba(255,209,102,.25) 55%, transparent 70%),
+        radial-gradient(circle at 70% 70%, rgba(187,102,255,.85), rgba(187,102,255,.2) 55%, transparent 70%),
+        linear-gradient(135deg, rgba(187,102,255,.25), rgba(255,209,102,.22));
+    }
+    .logo.fallback::after{
       content:"";
       position:absolute; inset:-30%;
       background: conic-gradient(from 90deg, transparent, rgba(255,255,255,.25), transparent);
@@ -71,6 +98,7 @@
       0%{transform:translateX(-30%) rotate(0deg)}
       100%{transform:translateX(30%) rotate(360deg)}
     }
+
     .brand h1{
       font-size:18px; line-height:1.15; margin:0;
       letter-spacing:.2px;
@@ -293,10 +321,23 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <!-- Clickable SGI logo (upper-left) -->
+        <a href="https://swamiginstitute.com"
+           class="logo"
+           id="sgiLogo"
+           aria-label="SwamiG Institute Home"
+           title="SwamiG Institute Home">
+          <img src="SwamiG.gif"
+               alt="SwamiG Institute (SGI) Logo"
+               loading="eager"
+               decoding="async"
+               onerror="this.remove();document.getElementById('sgiLogo').classList.add('fallback');">
+        </a>
+
         <div>
-          <h1>SwamiG Institute (SGI)</h1>
-          <div class="sub">Khemetian Tree of Life incorporated with Ifá / Orisha — 7-Week Hybrid Course</div>
+          <h1>SwamiG Institute</h1>                          
+           <font size="1"><i>(Universal Priesthood PreCourse)</i></font>
+          <div class="sub"><i>Khemetian Tree of Life incorporated with Ifá / Orisha — 7-Week Hybrid Course</i></div>
         </div>
       </div>
 
@@ -307,11 +348,11 @@
           <span aria-hidden="true"></span>
         </button>
         <button class="btn" type="button" onclick="window.print()">
-          <span>Print</span><span aria-hidden="true"></span>   </button>   
-          
-          <span class="pill"><span class="dot"></span><a href="https://forms.gle/KcvY9y9qVQ6w19Kt7"><font color="#ff8040">APPLY</font></a></span>
-              
-        </div>
+          <span>Print</span><span aria-hidden="true"></span>
+        </button>
+
+        <span class="pill"><span class="dot"></span><a href="https://forms.gle/KcvY9y9qVQ6w19Kt7"><font color="#ff8040">APPLY</font></a></span>
+      </div>
     </header>
 
     <section class="hero">
@@ -462,7 +503,7 @@
                 <div class="badge">2</div>
                 <div>
                   <div class="sumTitle">Module 2 — Obaluaye</div>
-                  <div class="sumMeta">Khemetian: Sebek / Heru-Urti</div>
+                  <div class="sumMeta">Khemetian: Sebek / Herukhuti</div>
                 </div>
               </div>
               <div class="chev" aria-hidden="true">›</div>
@@ -473,7 +514,7 @@
                   <h4>Alignment</h4>
                   <ul>
                     <li><strong>Orisha:</strong> Obaluaye</li>
-                    <li><strong>Khemetian:</strong> Sebek / Heru-Urti</li>
+                    <li><strong>Khemetian:</strong> Sebek / Herukhuti</li>
                   </ul>
                 </div>
                 <div class="box checklist">
@@ -701,7 +742,7 @@
     </section>
 
     <div class="foot">
-      © SwamiG Institute (SGI)2026 • Universal Priesthood Pre-Course Outline • Governered by Herukhuti(+)/Ogbe
+      © SwamiG Institute (SGI)2026 • Universal Priesthood Course Outline • Governered by Herukhuti(+)/Ogbe
     </div>
   </div>
 
