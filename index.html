@@ -304,12 +304,14 @@
         <span class="pill"><span class="dot"></span> Hybrid • Assignments • Weekly Zoom • Ritual Integration</span>
         <button class="btn" id="toggleTheme" type="button" aria-label="Toggle theme">
           <span>Toggle Theme</span>
-          <span aria-hidden="true">☾</span>
+          <span aria-hidden="true"></span>
         </button>
         <button class="btn" type="button" onclick="window.print()">
-          <span>Print</span><span aria-hidden="true">⎙</span>
-        </button>
-      </div>
+          <span>Print</span><span aria-hidden="true"></span>   </button>   
+          
+          <span class="pill"><span class="dot"></span><a href="https://forms.gle/KcvY9y9qVQ6w19Kt7"><font color="#ff8040">APPLY</font></a></span>
+              
+        </div>
     </header>
 
     <section class="hero">
@@ -322,7 +324,7 @@
             integrating Orisha/Ifá with Khemetian Tree-of-Life principles.
           </p>
           <div class="note tiny">
-            Week 6 is explicitly: <strong>Egun → Sheps</strong> (Ancestors → Transfigured/Perfected beings).
+            Week 6 is explicitly: <strong>Egun / Sheps</strong> (Ancestors - Transfigured/Perfecting energies).
           </div>
         </div>
         <div class="kpi">
@@ -699,20 +701,20 @@
     </section>
 
     <div class="foot">
-      © SwamiG Institute (SGI)2026 • Universal Priesthood Course Outline • Governered by Herukhuti(+)/Ogbe
+      © SwamiG Institute (SGI)2026 • Universal Priesthood Pre-Course Outline • Governered by Herukhuti(+)/Ogbe
     </div>
   </div>
 
   <script>
-    // Theme toggle (dark ↔ light) + persistence
+    // Theme toggle (dark ? light) + persistence
     (function(){
       const root = document.documentElement;
       const btn = document.getElementById('toggleTheme');
       const key = 'sgi_theme_pref_v1';
 
       function setTheme(mode){
-        if(mode === 'light'){ root.classList.add('light'); btn.lastElementChild.textContent = '☀'; }
-        else { root.classList.remove('light'); btn.lastElementChild.textContent = '☾'; }
+        if(mode === 'light'){ root.classList.add('light'); btn.lastElementChild.textContent = '?'; }
+        else { root.classList.remove('light'); btn.lastElementChild.textContent = '?'; }
         try{ localStorage.setItem(key, mode); }catch(e){}
       }
 
